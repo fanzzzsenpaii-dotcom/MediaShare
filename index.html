@@ -3,16 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Security Header Meta -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>MediaShare - Secure Cyber Cloud Storage</title>
+    <title>MediaShare - Secure Cloud Storage</title>
 
-    <!-- Google Fonts Sci-Fi -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@500;700;900&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -32,11 +27,7 @@
             --font-tech: 'Orbitron', sans-serif;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             background-color: var(--bg-color);
@@ -52,298 +43,79 @@
         }
 
         body::before {
-            content: '';
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: 
-                linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
-            background-size: 40px 40px;
-            z-index: -1;
-            pointer-events: none;
+            content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px; z-index: -1; pointer-events: none;
         }
 
-        /* Header / Nav */
         header {
-            width: 100%;
-            padding: 15px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid rgba(0, 240, 255, 0.25);
-            backdrop-filter: blur(12px);
-            background: rgba(3, 7, 18, 0.85);
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            width: 100%; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 1px solid rgba(0, 240, 255, 0.25); backdrop-filter: blur(12px); background: rgba(3, 7, 18, 0.85);
+            position: sticky; top: 0; z-index: 100;
         }
 
-        .logo {
-            font-family: var(--font-display);
-            font-size: 22px;
-            color: #fff;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 0 0 12px var(--neon-blue);
-            cursor: pointer;
-        }
-
+        .logo { font-family: var(--font-display); font-size: 22px; color: #fff; letter-spacing: 2px; text-shadow: 0 0 12px var(--neon-blue); cursor: pointer; }
         .logo span { color: var(--neon-blue); }
 
-        nav {
-            display: flex;
-            gap: 12px;
-            align-items: center;
-        }
-
+        nav { display: flex; gap: 12px; align-items: center; }
         .nav-btn {
-            background: rgba(0, 240, 255, 0.05);
-            border: 1px solid var(--neon-blue);
-            color: var(--neon-blue);
-            padding: 8px 16px;
-            font-family: var(--font-head);
-            font-size: 10px;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: all 0.3s;
+            background: rgba(0, 240, 255, 0.05); border: 1px solid var(--neon-blue); color: var(--neon-blue);
+            padding: 8px 16px; font-family: var(--font-head); font-size: 10px; letter-spacing: 1px; cursor: pointer; transition: 0.3s;
             clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
         }
+        .nav-btn:hover, .nav-btn.active { background: var(--neon-blue); color: #000; box-shadow: 0 0 15px var(--neon-blue); }
 
-        .nav-btn:hover, .nav-btn.active {
-            background: var(--neon-blue);
-            color: #000;
-            box-shadow: 0 0 15px var(--neon-blue);
-        }
+        main { width: 100%; max-width: 900px; margin: 30px auto; padding: 0 20px; flex: 1; }
+        .page-section { display: none; }
+        .page-section.active { display: block; }
 
-        /* Main App Container */
-        main {
-            width: 100%;
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 0 20px;
-            flex: 1;
-        }
-
-        .page-section {
-            display: none;
-        }
-
-        .page-section.active {
-            display: block;
-        }
-
-        /* Cyber Card Base */
         .cyber-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-glow);
-            padding: 30px;
-            position: relative;
-            backdrop-filter: blur(16px);
-            box-shadow: 0 0 30px rgba(0, 240, 255, 0.1);
-            clip-path: polygon(0 20px, 20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
-            margin-bottom: 25px;
+            background: var(--card-bg); border: 1px solid var(--border-glow); padding: 30px; position: relative;
+            backdrop-filter: blur(16px); box-shadow: 0 0 30px rgba(0, 240, 255, 0.1);
+            clip-path: polygon(0 20px, 20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%); margin-bottom: 25px;
         }
 
-        /* Section Titles */
         .section-title {
-            font-family: var(--font-display);
-            font-size: 18px;
-            color: #fff;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            border-bottom: 1px dashed rgba(0, 240, 255, 0.3);
-            padding-bottom: 10px;
+            font-family: var(--font-display); font-size: 18px; color: #fff; letter-spacing: 2px; margin-bottom: 20px;
+            display: flex; align-items: center; gap: 10px; border-bottom: 1px dashed rgba(0, 240, 255, 0.3); padding-bottom: 10px;
         }
-
         .section-title i { color: var(--neon-blue); }
 
-        /* Login Page */
-        .login-box {
-            text-align: center;
-            padding: 50px 20px;
-        }
-
+        .login-box { text-align: center; padding: 50px 20px; }
         .btn-google {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid #fff;
-            color: #fff;
-            padding: 15px 30px;
-            font-family: var(--font-head);
-            font-size: 12px;
-            letter-spacing: 2px;
-            cursor: pointer;
-            transition: 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
+            background: rgba(255, 255, 255, 0.05); border: 1px solid #fff; color: #fff; padding: 15px 30px;
+            font-family: var(--font-head); font-size: 12px; letter-spacing: 2px; cursor: pointer; transition: 0.3s;
+            display: inline-flex; align-items: center; gap: 12px;
             clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
         }
+        .btn-google:hover { background: #fff; color: #000; box-shadow: 0 0 20px #fff; }
 
-        .btn-google:hover {
-            background: #fff;
-            color: #000;
-            box-shadow: 0 0 20px #fff;
-        }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-family: var(--font-head); font-size: 10px; color: var(--neon-blue); margin-bottom: 8px; }
+        .form-control { width: 100%; padding: 12px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(0, 240, 255, 0.2); color: #fff; font-family: var(--font-tech); outline: none; }
 
-        /* Forms */
-        .form-group {
-            margin-bottom: 20px;
-        }
+        .progress-bar-bg { width: 100%; height: 8px; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--neon-blue); margin-top: 15px; display: none; }
+        .progress-bar-fill { height: 100%; width: 0%; background: var(--neon-blue); box-shadow: 0 0 10px var(--neon-blue); transition: width 0.2s ease; }
 
-        .form-group label {
-            display: block;
-            font-family: var(--font-head);
-            font-size: 10px;
-            color: var(--neon-blue);
-            margin-bottom: 8px;
-            letter-spacing: 1px;
-        }
+        .apk-grid { display: flex; flex-direction: column; gap: 15px; }
+        .apk-item { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(0, 240, 255, 0.15); padding: 18px; display: flex; justify-content: space-between; align-items: center; transition: 0.3s; }
+        .apk-item:hover { border-color: var(--neon-blue); box-shadow: 0 0 15px rgba(0, 240, 255, 0.1); }
+        .apk-info { display: flex; align-items: center; gap: 15px; }
+        .apk-icon { font-size: 30px; color: var(--neon-blue); }
+        .apk-details h3 { font-family: var(--font-display); font-size: 15px; color: #fff; }
+        .apk-details p { font-size: 11px; color: var(--text-sub); margin-top: 3px; }
+        .apk-uploader { font-size: 10px; color: var(--neon-purple); font-family: var(--font-head); margin-top: 4px; }
 
-        .form-control {
-            width: 100%;
-            padding: 12px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(0, 240, 255, 0.2);
-            color: #fff;
-            font-family: var(--font-tech);
-            outline: none;
-        }
+        .btn-download { background: rgba(0, 240, 255, 0.1); border: 1px solid var(--neon-blue); color: var(--neon-blue); padding: 10px 18px; font-family: var(--font-head); font-size: 10px; cursor: pointer; text-decoration: none; transition: 0.3s; }
+        .btn-download:hover { background: var(--neon-blue); color: #000; box-shadow: 0 0 15px var(--neon-blue); }
 
-        .form-control:focus {
-            border-color: var(--neon-blue);
-            box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
-        }
+        .profile-header { display: flex; align-items: center; gap: 20px; margin-bottom: 25px; }
+        .profile-avatar { width: 80px; height: 80px; border-radius: 50%; border: 2px solid var(--neon-blue); box-shadow: 0 0 15px var(--neon-blue); object-fit: cover; }
+        .profile-info h2 { font-family: var(--font-display); font-size: 20px; }
+        .profile-info p { font-size: 12px; color: var(--text-sub); margin-top: 5px; }
 
-        /* Upload Progress */
-        .progress-bar-bg {
-            width: 100%;
-            height: 8px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--neon-blue);
-            margin-top: 15px;
-            display: none;
-        }
-
-        .progress-bar-fill {
-            height: 100%;
-            width: 0%;
-            background: var(--neon-blue);
-            box-shadow: 0 0 10px var(--neon-blue);
-            transition: width 0.2s ease;
-        }
-
-        /* Feed List (APK List) */
-        .apk-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .apk-item {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(0, 240, 255, 0.15);
-            padding: 18px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: all 0.3s;
-        }
-
-        .apk-item:hover {
-            border-color: var(--neon-blue);
-            box-shadow: 0 0 15px rgba(0, 240, 255, 0.1);
-        }
-
-        .apk-info {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .apk-icon {
-            font-size: 30px;
-            color: var(--neon-blue);
-        }
-
-        .apk-details h3 {
-            font-family: var(--font-display);
-            font-size: 15px;
-            color: #fff;
-        }
-
-        .apk-details p {
-            font-size: 11px;
-            color: var(--text-sub);
-            margin-top: 3px;
-        }
-
-        .apk-uploader {
-            font-size: 10px;
-            color: var(--neon-purple);
-            font-family: var(--font-head);
-            margin-top: 4px;
-        }
-
-        .btn-download {
-            background: rgba(0, 240, 255, 0.1);
-            border: 1px solid var(--neon-blue);
-            color: var(--neon-blue);
-            padding: 10px 18px;
-            font-family: var(--font-head);
-            font-size: 10px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: 0.3s;
-        }
-
-        .btn-download:hover {
-            background: var(--neon-blue);
-            color: #000;
-            box-shadow: 0 0 15px var(--neon-blue);
-        }
-
-        /* Profile Page */
-        .profile-header {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            margin-bottom: 25px;
-        }
-
-        .profile-avatar {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            border: 2px solid var(--neon-blue);
-            box-shadow: 0 0 15px var(--neon-blue);
-            object-fit: cover;
-        }
-
-        .profile-info h2 {
-            font-family: var(--font-display);
-            font-size: 20px;
-        }
-
-        .profile-info p {
-            font-size: 12px;
-            color: var(--text-sub);
-            margin-top: 5px;
-        }
-
-        footer {
-            padding: 20px;
-            text-align: center;
-            font-family: var(--font-head);
-            font-size: 10px;
-            color: var(--text-sub);
-            letter-spacing: 2px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
+        footer { padding: 20px; text-align: center; font-family: var(--font-head); font-size: 10px; color: var(--text-sub); border-top: 1px solid rgba(255, 255, 255, 0.05); }
 
         @media (max-width: 600px) {
             header { padding: 15px; }
@@ -354,7 +126,6 @@
 </head>
 <body>
 
-    <!-- NAVBAR HEADER -->
     <header>
         <div class="logo" onclick="switchPage('home')">
             <i class="fa-solid fa-atom"></i> MEDIA<span>SHARE</span>
@@ -368,7 +139,7 @@
     </header>
 
     <main>
-        <!-- PAGE 1: HOME (REALTIME FEED) -->
+        <!-- HOME PAGE -->
         <section id="page-home" class="page-section active">
             <div class="cyber-card">
                 <div class="section-title">
@@ -380,7 +151,7 @@
             </div>
         </section>
 
-        <!-- PAGE 2: UPLOAD PAGE (WAJIB AUTHENTICATED) -->
+        <!-- UPLOAD PAGE -->
         <section id="page-upload" class="page-section">
             <div class="cyber-card">
                 <div class="section-title">
@@ -388,15 +159,15 @@
                 </div>
                 <form id="uploadForm" onsubmit="handleUpload(event)">
                     <div class="form-group">
-                        <label>NAMA APLIKASI / MOD (MAX 100 KARAKTER)</label>
+                        <label>NAMA APLIKASI / MOD</label>
                         <input type="text" id="apkTitle" class="form-control" maxlength="100" placeholder="Contoh: Mobile Legends Mod v1.0" required>
                     </div>
                     <div class="form-group">
-                        <label>DESKRIPSI SINGKAT (MAX 500 KARAKTER)</label>
+                        <label>DESKRIPSI SINGKAT</label>
                         <input type="text" id="apkDesc" class="form-control" maxlength="500" placeholder="Fitur mod, versi, dll." required>
                     </div>
                     <div class="form-group">
-                        <label>PILIH FILE (.APK SAJA, MAX 100MB)</label>
+                        <label>PILIH FILE (.APK SAJA)</label>
                         <input type="file" id="apkFile" class="form-control" accept=".apk" required>
                     </div>
 
@@ -410,12 +181,10 @@
             </div>
         </section>
 
-        <!-- PAGE 3: PROFIL SAYA -->
+        <!-- PROFIL PAGE -->
         <section id="page-profile" class="page-section">
             <div class="cyber-card">
-                <div class="section-title">
-                    <i class="fa-solid fa-id-card"></i> USER PROFILE
-                </div>
+                <div class="section-title"><i class="fa-solid fa-id-card"></i> USER PROFILE</div>
                 <div class="profile-header">
                     <img src="" id="userPhoto" class="profile-avatar" alt="Avatar">
                     <div class="profile-info">
@@ -428,22 +197,18 @@
             </div>
 
             <div class="cyber-card">
-                <div class="section-title">
-                    <i class="fa-solid fa-folder-open"></i> UPLOAD SAYA
-                </div>
+                <div class="section-title"><i class="fa-solid fa-folder-open"></i> UPLOAD SAYA</div>
                 <div class="apk-grid" id="myApkList">
                     <p style="text-align:center; color: var(--text-sub);">Belum ada APK yang diupload.</p>
                 </div>
             </div>
         </section>
 
-        <!-- PAGE 4: LOGIN GOOGLE -->
+        <!-- LOGIN PAGE -->
         <section id="page-login" class="page-section">
             <div class="cyber-card login-box">
-                <div class="section-title" style="justify-content: center;">
-                    <i class="fa-solid fa-shield-halved"></i> AUTHENTICATION
-                </div>
-                <p style="color: var(--text-sub); margin-bottom: 30px; font-size: 12px;">LOGIN DENGAN AKUN GOOGLE UNTUK MENGUNGGAH APK KE PUBLIK.</p>
+                <div class="section-title" style="justify-content: center;"><i class="fa-solid fa-shield-halved"></i> AUTHENTICATION</div>
+                <p style="color: var(--text-sub); margin-bottom: 30px; font-size: 12px;">LOGIN DENGAN AKUN GOOGLE UNTUK MENGUNGGAH APK.</p>
                 <button class="btn-google" onclick="loginGoogle()">
                     <i class="fa-brands fa-google"></i> SIGN IN WITH GOOGLE
                 </button>
@@ -451,21 +216,17 @@
         </section>
     </main>
 
-    <footer>
-        MEDIASHARE PROTOCOL &copy; 2026 | HIGH SECURITY BACKEND SYSTEM
-    </footer>
+    <footer>MEDIASHARE PROTOCOL &copy; 2026 | FREE CLOUD STORAGE ENDPOINT</footer>
 
-    <!-- FIREBASE SDK (v10.8.0) -->
+    <!-- FIREBASE SDK -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
         import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
         import { getDatabase, ref, push, onValue, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
-        import { getStorage, ref as storageRef, uploadBytesResumable, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-storage.js";
 
-        // ==========================================
-        // KONFIGURASI FIREBASE ANDA
-        // ==========================================
+        // 1. MASUKKAN KONFIGURASI FIREBASE KAMU (Tanpa Storage)
         const firebaseConfig = {
+            const firebaseConfig = {
   apiKey: "AIzaSyAQE-GJbo_tf32iY7y58tPZ-UFshLXyy0c",
   authDomain: "mediashare-558ae.firebaseapp.com",
   databaseURL: "https://mediashare-558ae-default-rtdb.asia-southeast1.firebasedatabase.app",
@@ -476,25 +237,21 @@
   measurementId: "G-2KESDXWV9G"
 };
 
+        // 2. MASUKKAN AKUN CLOUDINARY GRATIS KAMU DI SINI
+        const CLOUDINARY_CLOUD_NAME = "NAMA_CLOUD_KAMU"; 
+        const CLOUDINARY_UPLOAD_PRESET = "UPLOAD_PRESET_KAMU";
+
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
         const db = getDatabase(app);
-        const storage = getStorage(app);
 
         let currentUser = null;
 
-        // HELPER SECURE: SANITASI INPUT MENCEGAH SERANGAN XSS
         function sanitizeInput(str) {
             if (!str) return '';
-            return String(str)
-                .replace(/&/g, '&amp;')
-                .replace(/</g, '&lt;')
-                .replace(/>/g, '&gt;')
-                .replace(/"/g, '&quot;')
-                .replace(/'/g, '&#39;');
+            return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
         }
 
-        // AUTHENTICATION OBSERVER (AUTO RELOG)
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 currentUser = user;
@@ -515,26 +272,16 @@
             }
         });
 
-        // GOOGLE LOGIN
         window.loginGoogle = () => {
             const provider = new GoogleAuthProvider();
-            signInWithPopup(auth, provider)
-                .then(() => {
-                    window.switchPage('home');
-                })
-                .catch((error) => {
-                    alert("Authentication Failed: " + error.message);
-                });
+            signInWithPopup(auth, provider).then(() => switchPage('home')).catch(err => alert("Login Gagal: " + err.message));
         };
 
-        // LOGOUT
         window.logoutGoogle = () => {
-            signOut(auth).then(() => {
-                window.switchPage('home');
-            });
+            signOut(auth).then(() => switchPage('home'));
         };
 
-        // REALTIME DATABASE FEED (HOMEPAGE)
+        // READ REALTIME DATABASE
         const apkRef = ref(db, 'apks');
         onValue(apkRef, (snapshot) => {
             const data = snapshot.val();
@@ -544,27 +291,17 @@
             if (data) {
                 const list = Object.values(data).reverse();
                 list.forEach(item => {
-                    const cleanTitle = sanitizeInput(item.title);
-                    const cleanDesc = sanitizeInput(item.description);
-                    const cleanUploader = sanitizeInput(item.uploaderName);
-                    const cleanSize = sanitizeInput(item.fileSize);
-                    
-                    // Memastikan URL unduhan sah berasal dari domain Firebase Storage
-                    const safeUrl = (item.downloadUrl && item.downloadUrl.startsWith('https://firebasestorage.googleapis.com')) 
-                        ? item.downloadUrl 
-                        : '#';
-
                     apkListContainer.innerHTML += `
                         <div class="apk-item">
                             <div class="apk-info">
                                 <div class="apk-icon"><i class="fa-solid fa-android"></i></div>
                                 <div class="apk-details">
-                                    <h3>${cleanTitle}</h3>
-                                    <p>${cleanDesc}</p>
-                                    <div class="apk-uploader">Uploaded by: ${cleanUploader} | ${cleanSize}</div>
+                                    <h3>${sanitizeInput(item.title)}</h3>
+                                    <p>${sanitizeInput(item.description)}</p>
+                                    <div class="apk-uploader">Uploaded by: ${sanitizeInput(item.uploaderName)} | ${sanitizeInput(item.fileSize)}</div>
                                 </div>
                             </div>
-                            <a href="${safeUrl}" target="_blank" rel="noopener noreferrer" class="btn-download">
+                            <a href="${item.downloadUrl}" target="_blank" rel="noopener noreferrer" class="btn-download">
                                 <i class="fa-solid fa-download"></i> DOWNLOAD
                             </a>
                         </div>
@@ -575,7 +312,6 @@
             }
         });
 
-        // USER APK LIST (PROFIL PAGE)
         function loadUserApks(uid) {
             onValue(apkRef, (snapshot) => {
                 const data = snapshot.val();
@@ -586,20 +322,16 @@
                     const list = Object.values(data).filter(item => item.uploaderId === uid).reverse();
                     if (list.length > 0) {
                         list.forEach(item => {
-                            const cleanTitle = sanitizeInput(item.title);
-                            const cleanDesc = sanitizeInput(item.description);
-                            const safeUrl = item.downloadUrl.startsWith('https://firebasestorage.googleapis.com') ? item.downloadUrl : '#';
-
                             myApkContainer.innerHTML += `
                                 <div class="apk-item">
                                     <div class="apk-info">
                                         <div class="apk-icon"><i class="fa-solid fa-android"></i></div>
                                         <div class="apk-details">
-                                            <h3>${cleanTitle}</h3>
-                                            <p>${cleanDesc}</p>
+                                            <h3>${sanitizeInput(item.title)}</h3>
+                                            <p>${sanitizeInput(item.description)}</p>
                                         </div>
                                     </div>
-                                    <a href="${safeUrl}" target="_blank" rel="noopener noreferrer" class="btn-download">DOWNLOAD</a>
+                                    <a href="${item.downloadUrl}" target="_blank" rel="noopener noreferrer" class="btn-download">DOWNLOAD</a>
                                 </div>
                             `;
                         });
@@ -610,13 +342,12 @@
             });
         }
 
-        // SECURE FILE UPLOAD HANDLER
+        // UPLOAD FILE LEWAT CLOUDINARY (BEBAS BINDING / BILLING)
         window.handleUpload = (event) => {
             event.preventDefault();
-
             if (!currentUser) {
                 alert("Akses ditolak. Silakan login terlebih dahulu!");
-                window.switchPage('login');
+                switchPage('login');
                 return;
             }
 
@@ -625,22 +356,10 @@
             const fileInput = document.getElementById('apkFile');
             const file = fileInput.files[0];
 
-            // VALIDASI DENGAN PERSYARATAN KETAT
-            if (!file) {
-                alert("Silakan pilih file APK!");
-                return;
-            }
+            if (!file) return;
 
-            // 1. Validasi Ekstensi File
             if (!file.name.toLowerCase().endsWith('.apk')) {
-                alert("Keamanan Menolak: Hanya file bermuatan .apk yang diizinkan!");
-                return;
-            }
-
-            // 2. Validasi Batas Ukuran File (Maksimal 100MB)
-            const maxMB = 100;
-            if (file.size > maxMB * 1024 * 1024) {
-                alert(`Keamanan Menolak: Ukuran file melebihi batas (${maxMB}MB)!`);
+                alert("Hanya file bertipe .apk yang diizinkan!");
                 return;
             }
 
@@ -652,60 +371,65 @@
             submitBtn.disabled = true;
             progressBg.style.display = 'block';
 
-            // Nama File Unik menggunakan Timestamp untuk Mencegah File Overwrite Attack
-            const safeFileName = `${Date.now()}_${file.name.replace(/[^a-zA-Z0-9.-]/g, '_')}`;
-            const fileStorageRef = storageRef(storage, 'apks/' + safeFileName);
-            
-            // Upload dengan Spesifikasi Metadata APK
-            const uploadTask = uploadBytesResumable(fileStorageRef, file, {
-                contentType: 'application/vnd.android.package-archive'
-            });
+            // Kirim File ke API Cloudinary via XMLHttpRequest untuk animasi % progress
+            const formData = new FormData();
+            formData.append('file', file);
+            formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
 
-            uploadTask.on('state_changed', 
-                (snapshot) => {
-                    const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/raw/upload`, true);
+
+            xhr.upload.onprogress = (e) => {
+                if (e.lengthComputable) {
+                    const progress = (e.loaded / e.total) * 100;
                     progressFill.style.width = progress + '%';
                     statusText.innerText = `TRANSFERRING DATA... ${Math.round(progress)}%`;
-                }, 
-                (error) => {
-                    alert('Upload Gagal: ' + error.message);
+                }
+            };
+
+            xhr.onload = () => {
+                if (xhr.status === 200) {
+                    const response = JSON.parse(xhr.responseText);
+                    const downloadURL = response.secure_url;
+
+                    // Simpan metadata ke Firebase Realtime Database
+                    push(ref(db, 'apks'), {
+                        title: rawTitle,
+                        description: rawDesc,
+                        downloadUrl: downloadURL,
+                        uploaderId: currentUser.uid,
+                        uploaderName: currentUser.displayName || 'Anonymous',
+                        fileSize: (file.size / (1024 * 1024)).toFixed(2) + ' MB',
+                        createdAt: serverTimestamp()
+                    }).then(() => {
+                        alert('⚡ APK Berhasil Dipublikasikan!');
+                        document.getElementById('uploadForm').reset();
+                        progressBg.style.display = 'none';
+                        statusText.innerText = '';
+                        submitBtn.disabled = false;
+                        switchPage('home');
+                    });
+                } else {
+                    alert('Upload Gagal: Cek Cloud Name & Preset Cloudinary kamu!');
                     submitBtn.disabled = false;
                     progressBg.style.display = 'none';
-                }, 
-                () => {
-                    getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-                        // Push Ke Realtime Database
-                        push(ref(db, 'apks'), {
-                            title: rawTitle,
-                            description: rawDesc,
-                            downloadUrl: downloadURL,
-                            uploaderId: currentUser.uid,
-                            uploaderName: currentUser.displayName || 'Anonymous',
-                            fileSize: (file.size / (1024 * 1024)).toFixed(2) + ' MB',
-                            createdAt: serverTimestamp()
-                        }).then(() => {
-                            alert('⚡ APK Berhasil Dipublikasikan secara Aman!');
-                            document.getElementById('uploadForm').reset();
-                            progressBg.style.display = 'none';
-                            statusText.innerText = '';
-                            submitBtn.disabled = false;
-                            window.switchPage('home');
-                        });
-                    });
                 }
-            );
+            };
+
+            xhr.onerror = () => {
+                alert('Terjadi kesalahan jaringan!');
+                submitBtn.disabled = false;
+                progressBg.style.display = 'none';
+            };
+
+            xhr.send(formData);
         };
     </script>
 
-    <!-- NAVIGATION SCRIPT -->
     <script>
         function switchPage(pageId) {
-            document.querySelectorAll('.page-section').forEach(page => {
-                page.classList.remove('active');
-            });
-            document.querySelectorAll('.nav-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
+            document.querySelectorAll('.page-section').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
 
             const targetPage = document.getElementById('page-' + pageId);
             if (targetPage) targetPage.classList.add('active');
